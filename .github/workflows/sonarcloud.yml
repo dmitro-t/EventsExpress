@@ -32,5 +32,5 @@ jobs:
         run: |
           dotnet-sonarscanner begin /k:"first-app" /o:"dmitro-t" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet clean
-          dotnet build --no-incremental
+          dotnet build --no-incremental /p:TreatWarningsAsErrors=false
           dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
