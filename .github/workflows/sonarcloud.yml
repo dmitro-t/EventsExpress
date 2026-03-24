@@ -30,7 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          dotnet-sonarscanner begin /k:"first-app" /o:"dmitro-t" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet-sonarscanner begin /k:"dmitro-t_EventsExpress" /o:"dmitro-t" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet clean
           dotnet build --no-incremental /p:TreatWarningsAsErrors=false
           dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
